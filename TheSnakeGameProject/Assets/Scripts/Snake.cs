@@ -12,9 +12,16 @@ public class Snake : MonoBehaviour
     private float gridMoveTimer;
     private float gridMoveTimerMax;
 
+    private LevelGrid levelGrid;
+
+    public void Setup(LevelGrid levelGrid) 
+    {
+        this.levelGrid = levelGrid;  
+    }
+
     private void Awake()
     {
-        gridPosition = new Vector2Int(0, 0);
+        gridPosition = new Vector2Int(10, 10);
 
         gridMoveTimerMax = .5f;
         gridMoveTimer = gridMoveTimerMax;
@@ -81,7 +88,15 @@ public class Snake : MonoBehaviour
         {
             gridPosition += gridDirection;
             gridMoveTimer -= gridMoveTimerMax;
-            transform.position = new Vector2(gridPosition.x, gridPosition.y);
+
+            transform.position = new Vector2(gridPosition.x, gridPosition.y);  //moving
+
+            levelGrid.SnakeMoved(gridPosition);     //food and snake at a same position
         }       
+    }
+
+    public Vector2Int GetGridPosition() 
+    {
+        return gridPosition;
     }
 }

@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 4447b1eb74e5e274b8b3602ce7f427b1
+guid: a4c86f14aa52a6548915d060ed38988e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8866677585493399407
-    second: snakeHeadUP
+      213: -1045181238759104467
+    second: food_0
   - first:
-      213: 2885435292033664308
-    second: snakeHeadRight
-  - first:
-      213: 1002017818592406128
-    second: snakeHeadLeft
-  - first:
-      213: 1327854749836731671
-    second: snakeHeadDown
+      213: 3046544090647025007
+    second: Food
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -58,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,34 +95,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: snakeHeadUP
+      name: Food
       rect:
         serializedVersion: 2
-        x: 194
-        y: 192
-        width: 60
-        height: 62
-      alignment: 9
-      pivot: {x: 0.51868695, y: 0.69306856}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f67904d4944cc0b70800000000000000
-      internalID: 8866677585493399407
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: snakeHeadRight
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 194
-        width: 62
-        height: 60
+        x: 4
+        y: 1
+        width: 56
+        height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,50 +109,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 435ca044c102b0820800000000000000
-      internalID: 2885435292033664308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: snakeHeadLeft
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 131
-        width: 62
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07aefc7a5e1e7ed00800000000000000
-      internalID: 1002017818592406128
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: snakeHeadDown
-      rect:
-        serializedVersion: 2
-        x: 258
-        y: 130
-        width: 60
-        height: 62
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71565551cdc7d6210800000000000000
-      internalID: 1327854749836731671
+      spriteID: f65d49b85bf774a20800000000000000
+      internalID: 3046544090647025007
       vertices: []
       indices: 
       edges: []
