@@ -14,8 +14,5 @@ public class GameHandler : MonoBehaviour
         snake.Setup(levelGrid);
         levelGrid.Setup(snake);
 
-        //GameObject snakeHeadGameObject = new GameObject();
-        //SpriteRenderer snakeSpriteRenderer = snakeHeadGameObject.AddComponent<SpriteRenderer>();
-        //snakeSpriteRenderer.sprite = GameAssets.instance.snakeHeadSprite;
     }
 }

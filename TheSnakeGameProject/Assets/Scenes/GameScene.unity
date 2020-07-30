@@ -438,6 +438,8 @@ MonoBehaviour:
     type: 3}
   foodSprite: {fileID: 3046544090647025007, guid: a4c86f14aa52a6548915d060ed38988e,
     type: 3}
+  snakeBodySprite: {fileID: 6548325353667523309, guid: 4e8dd99a74196f643ac238c5b6601a31,
+    type: 3}
 --- !u!4 &1916195972
 Transform:
   m_ObjectHideFlags: 0
