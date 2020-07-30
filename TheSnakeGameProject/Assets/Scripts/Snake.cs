@@ -153,7 +153,7 @@ public class Snake : MonoBehaviour
     {
         for (int i = 0; i < snakeBodyPartList.Count; i++)
         {
-            snakeBodyPartList[i].SetGridPosition(snakeMovePositionList[i].GetGridPosition());
+            snakeBodyPartList[i].SetSnakeMovePosition(snakeMovePositionList[i]);
         }
     }
 
@@ -176,7 +176,7 @@ public class Snake : MonoBehaviour
     private class SnakeBodyPart 
     {
         private Transform transform;
-        private Vector2Int gridPosition;
+        private SnakeMovePosition snakeMovePosition;
 
         public SnakeBodyPart(int bodyIndex)
         {                                    
@@ -186,10 +186,28 @@ public class Snake : MonoBehaviour
             transform = snakeBodyGameObject.transform;
         }
 
-        public void SetGridPosition(Vector2Int gridPosition) 
+        public void SetSnakeMovePosition(SnakeMovePosition snakeMovePosition) 
         {
-            this.gridPosition = gridPosition;
-            transform.position = new Vector2(gridPosition.x, gridPosition.y);
+            this.snakeMovePosition = snakeMovePosition;
+            transform.position = new Vector2(snakeMovePosition.GetGridPosition().x, snakeMovePosition.GetGridPosition().y);
+
+            float angle = 0f;
+            switch (snakeMovePosition.GetDirection()) {
+            default:
+                case Direction.Up:
+                    angle = 0;
+                    break;
+                case Direction.Down:
+                    angle = 180;
+                    break;
+                case Direction.Right:
+                    angle = 90;
+                    break;
+                case Direction.Left:
+                    angle = -90;
+                    break;
+            }
+            transform.eulerAngles = new Vector3(0, 0, angle);
         }
     }
 
@@ -207,6 +225,11 @@ public class Snake : MonoBehaviour
         public Vector2Int GetGridPosition() 
         {
             return gridPosition;
+        }
+
+        public Direction GetDirection() 
+        {
+            return direction;
         }
     }
 }
