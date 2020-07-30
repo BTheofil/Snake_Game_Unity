@@ -103,7 +103,13 @@ public class Snake : MonoBehaviour
         {
             gridMoveTimer -= gridMoveTimerMax;
 
-            SnakeMovePosition snakeMovePosition = new SnakeMovePosition(gridPosition, gridMoveDirection);
+            SnakeMovePosition previousSnakeMovePosition = null;
+            if (snakeMovePositionList.Count > 0)
+            {
+                previousSnakeMovePosition = snakeMovePositionList[0];
+            }
+
+            SnakeMovePosition snakeMovePosition = new SnakeMovePosition(previousSnakeMovePosition, gridPosition, gridMoveDirection);
             snakeMovePositionList.Insert(0, snakeMovePosition);
 
             Vector2Int gridMoveDirectionVector;
@@ -201,7 +207,13 @@ public class Snake : MonoBehaviour
                     angle = 180;
                     break;
                 case Direction.Right:
-                    angle = 90;
+                    switch (snakeMovePosition.GetPreviousDirection())
+                    {
+                        default:
+                            angle = 90; break;
+                        case Direction.Down:
+                            angle = 45; break;
+                    }
                     break;
                 case Direction.Left:
                     angle = -90;
@@ -213,11 +225,13 @@ public class Snake : MonoBehaviour
 
     private class SnakeMovePosition 
     {
+        private SnakeMovePosition previousSnakeMoveDirection;
         private Vector2Int gridPosition;
         private Direction direction;
 
-        public SnakeMovePosition(Vector2Int gridPosition, Direction direction) 
+        public SnakeMovePosition(SnakeMovePosition previousSnakeMoveDirection, Vector2Int gridPosition, Direction direction) 
         {
+            this.previousSnakeMoveDirection = previousSnakeMoveDirection;
             this.gridPosition = gridPosition;
             this.direction = direction;
         }
@@ -230,6 +244,16 @@ public class Snake : MonoBehaviour
         public Direction GetDirection() 
         {
             return direction;
+        }
+
+        public Direction GetPreviousDirection() 
+        {
+            if (previousSnakeMoveDirection == null)
+            {
+                return Direction.Right;
+            }else { 
+                return previousSnakeMoveDirection.direction;
+            }
         }
     }
 }
